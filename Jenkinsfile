@@ -1,7 +1,11 @@
 pipeline
 {
 agent any
-stages
+environment
+    {
+        def mvnhome = tool name: 'Maven', type: 'maven'
+    }
+    stages
 {
 
     stage('clone')
@@ -13,7 +17,7 @@ stages
     stage('package')
     {
     steps {
-        def mvnhome = tool name: 'Maven', type: 'maven'
+        
         sh "${mvnhome}/bin/mvn package"
         }
     }
