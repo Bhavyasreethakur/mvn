@@ -3,7 +3,7 @@ pipeline
 agent any
 environment
     {
-        def mvnhome = tool name: 'Maven', type: 'maven'
+        def mvnhome = tool name: 'maven', type: 'maven'
     }
     stages
 {
